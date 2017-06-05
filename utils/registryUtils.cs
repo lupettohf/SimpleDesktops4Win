@@ -5,7 +5,7 @@ namespace SimpleDesktops4Win.utils
 {
     class registryUtils
     {
-        private void setStartup(bool enable)
+        public static void setStartup(bool enable)
         {
             RegistryKey regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
@@ -20,7 +20,7 @@ namespace SimpleDesktops4Win.utils
         /*
          * By default windows reduces the background quality to the equivalent of a 85% compressed jpg.
          * */
-        private void setQualityFix(bool enable)
+        public static void setQualityFix(bool enable)
         {
             RegistryKey regKey = Registry.CurrentUser.OpenSubKey("HKEY_CURRENT_USER\\Control Panel\\Desktop", true);
             if(enable)
