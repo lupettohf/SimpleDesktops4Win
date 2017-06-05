@@ -1,5 +1,6 @@
 SimpleDesktops4Win _αlpha 0.0.1_
 ===================
+_A simple and lightweight desktop client for simpledesktops.com_
 
 
 ----------
