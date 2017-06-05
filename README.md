@@ -38,8 +38,11 @@ You can get the application in setup or standalone form.
 ## Credits ##
 
 App development by Andrea Santaniello ([http://lupettohf.me/](http://lupettohf.me/))
+
 Application icon by DesignContest ([http://www.designcontest.com/](http://www.designcontest.com/))
+
 GUI icons by IconsMind ([https://iconsmind.com/](https://iconsmind.com/))
+
 Wallpapers provided by Simple Desktops ([http://simpledesktops.com/](http://simpledesktops.com/))
 
 
