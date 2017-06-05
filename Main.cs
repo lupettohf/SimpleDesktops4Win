@@ -1,0 +1,100 @@
+﻿using System;
+using System.Threading;
+using System.Windows.Forms;
+namespace SimpleDesktops4Win
+{
+    public partial class Main : Form
+    {
+        private int current_offset = 0;
+        private int total_wallpapers;
+        private RootObject parsedData;
+    
+        public Main()
+        {
+            InitializeComponent();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            updateWallpaperData(current_offset);
+        }
+
+        private void updateWallpaperData(int offset)
+        {
+            try
+            {
+                RootObject wallpaperdata = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(webCl.downloadRawWPList(current_offset));
+                parsedData = wallpaperdata;
+                total_wallpapers = wallpaperdata.meta.total_count;
+                wpSelector.Items.Clear();
+                foreach (var wallpaper in wallpaperdata.objects)
+                {
+                    wpSelector.Items.Add(new WallPaperItem { WallpaperName = wallpaper.title, WallpaperId = wallpaper.id });
+                }
+                wpSelector.SelectedIndex = 0;
+                toolStripLabelCurrentpage.Text = String.Format("Current Page: {0}/{1}", current_offset / 24, total_wallpapers / 24);
+            }catch (Exception e) { }
+        }
+
+        public void downloadSetBackground(string url)
+        {
+            utils.wallpaperAgent.Set(webCl.downloadImage(url));
+        }
+
+        private void wpSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var currentWallpaper = parsedData.objects.Find(x => x.id == ((WallPaperItem)wpSelector.SelectedItem).WallpaperId.ToString());
+            pictureBoxCurWallpaper.Image = webCl.downloadImage(currentWallpaper.iphone_thumb);
+            labelTitle.Text = String.Format("Title: {0}", currentWallpaper.title);
+            labelAuthor.Text = String.Format("Author: {0}", currentWallpaper.creator.name);           
+        }
+
+        private class WallPaperItem
+        {
+            public string WallpaperName { get; set; }
+            public object WallpaperId { get; set; }
+
+            public override string ToString()
+            {
+                return WallpaperName;
+            }
+        }
+
+        private void toolStripButtonSetCurrent_Click(object sender, EventArgs e)
+        {
+            var currentWallpaper = parsedData.objects.Find(x => x.id == ((WallPaperItem)wpSelector.SelectedItem).WallpaperId.ToString());
+            try {
+                Thread downloadAndSet = new Thread(o => { downloadSetBackground((string)o); });
+                downloadAndSet.Start(currentWallpaper.url);
+            } catch (Exception ex) { }
+        }
+
+        private void toolStripButtonBack_Click(object sender, EventArgs e)
+        {
+            if(current_offset == 0)
+            {
+                return;
+            } else {
+                current_offset -= 24;
+                updateWallpaperData(current_offset);
+            }
+        }
+
+        private void toolStripButtonForward_Click(object sender, EventArgs e)
+        {
+            if(current_offset == total_wallpapers / 24)
+            {
+                return;
+            } else {
+                current_offset += 24;
+                updateWallpaperData(current_offset);
+            }
+        }
+
+        private void toolStripButtonSettings_Click(object sender, EventArgs e)
+        {
+            Settings form = new Settings();
+            form.Show();
+        }
+    }
+}
