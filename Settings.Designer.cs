@@ -117,10 +117,9 @@
             this.AboutText.AutoSize = true;
             this.AboutText.Location = new System.Drawing.Point(8, 16);
             this.AboutText.Name = "AboutText";
-            this.AboutText.Size = new System.Drawing.Size(253, 39);
+            this.AboutText.Size = new System.Drawing.Size(253, 52);
             this.AboutText.TabIndex = 0;
-            this.AboutText.Text = "Application built by Andrea Santaniello \"lupettohf\"\r\nIcons by IconsMind (Line Ico" +
-    "ns) and DesignContest\r\nWallpapers provided by the SimpleDesktops authors";
+            this.AboutText.Text = resources.GetString("AboutText.Text");
             // 
             // groupBoxSettings
             // 
