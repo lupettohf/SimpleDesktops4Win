@@ -37,7 +37,7 @@ namespace SimpleDesktops4Win.utils
                     tempPath,
                     SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
             }
-            catch (Exception e){}
+            catch (Exception){}
         }
     }
 }

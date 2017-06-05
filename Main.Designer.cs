@@ -41,11 +41,11 @@
             this.toolStripButtonBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonForward = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelCurrentpage = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButtonSetCurrent = new System.Windows.Forms.ToolStripButton();
             this.timerChangeBackgound = new System.Windows.Forms.Timer(this.components);
             this.notifyIconControl = new System.Windows.Forms.NotifyIcon(this.components);
-            this.toolStripButtonExit = new System.Windows.Forms.ToolStripButton();
             this.groupBoxRect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurWallpaper)).BeginInit();
             this.toolStripSettings.SuspendLayout();
@@ -160,6 +160,17 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonExit
+            // 
+            this.toolStripButtonExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExit.Image")));
+            this.toolStripButtonExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExit.Name = "toolStripButtonExit";
+            this.toolStripButtonExit.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonExit.Text = "Exit application";
+            this.toolStripButtonExit.Click += new System.EventHandler(this.toolStripButtonExit_Click);
+            // 
             // toolStripLabelCurrentpage
             // 
             this.toolStripLabelCurrentpage.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -179,7 +190,7 @@
             // 
             // timerChangeBackgound
             // 
-            this.timerChangeBackgound.Interval = 5000;
+            this.timerChangeBackgound.Interval = 300000;
             this.timerChangeBackgound.Tick += new System.EventHandler(this.timerChanegBackgound_Tick);
             // 
             // notifyIconControl
@@ -190,17 +201,6 @@
             this.notifyIconControl.Text = "SimpleDesktops4Win";
             this.notifyIconControl.Visible = true;
             this.notifyIconControl.Click += new System.EventHandler(this.notifyIconControl_Click);
-            // 
-            // toolStripButtonExit
-            // 
-            this.toolStripButtonExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButtonExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExit.Image")));
-            this.toolStripButtonExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonExit.Name = "toolStripButtonExit";
-            this.toolStripButtonExit.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonExit.Text = "Exit application";
-            this.toolStripButtonExit.Click += new System.EventHandler(this.toolStripButtonExit_Click);
             // 
             // Main
             // 

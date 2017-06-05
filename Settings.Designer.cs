@@ -37,17 +37,17 @@
             this.linkGithub = new System.Windows.Forms.LinkLabel();
             this.AboutText = new System.Windows.Forms.Label();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.groupBoxDivide = new System.Windows.Forms.GroupBox();
+            this.linkLabelQualityInfo = new System.Windows.Forms.LinkLabel();
+            this.checkBoxFixQuality = new System.Windows.Forms.CheckBox();
+            this.checkBoxBoot = new System.Windows.Forms.CheckBox();
             this.labelMinutes = new System.Windows.Forms.Label();
             this.numericUpDownTime = new System.Windows.Forms.NumericUpDown();
             this.checkBoxUseTimer = new System.Windows.Forms.CheckBox();
-            this.groupBoxDivide = new System.Windows.Forms.GroupBox();
-            this.checkBoxBoot = new System.Windows.Forms.CheckBox();
-            this.checkBoxFixQuality = new System.Windows.Forms.CheckBox();
-            this.linkLabelQualityInfo = new System.Windows.Forms.LinkLabel();
             this.AboutBox.SuspendLayout();
             this.groupBoxSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).BeginInit();
             this.groupBoxDivide.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).BeginInit();
             this.SuspendLayout();
             // 
             // AboutBox
@@ -138,6 +138,50 @@
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings";
             // 
+            // groupBoxDivide
+            // 
+            this.groupBoxDivide.Controls.Add(this.linkLabelQualityInfo);
+            this.groupBoxDivide.Controls.Add(this.checkBoxFixQuality);
+            this.groupBoxDivide.Controls.Add(this.checkBoxBoot);
+            this.groupBoxDivide.Location = new System.Drawing.Point(145, 0);
+            this.groupBoxDivide.Name = "groupBoxDivide";
+            this.groupBoxDivide.Size = new System.Drawing.Size(142, 75);
+            this.groupBoxDivide.TabIndex = 3;
+            this.groupBoxDivide.TabStop = false;
+            // 
+            // linkLabelQualityInfo
+            // 
+            this.linkLabelQualityInfo.AutoSize = true;
+            this.linkLabelQualityInfo.Location = new System.Drawing.Point(120, 43);
+            this.linkLabelQualityInfo.Name = "linkLabelQualityInfo";
+            this.linkLabelQualityInfo.Size = new System.Drawing.Size(13, 13);
+            this.linkLabelQualityInfo.TabIndex = 2;
+            this.linkLabelQualityInfo.TabStop = true;
+            this.linkLabelQualityInfo.Text = "?";
+            this.linkLabelQualityInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelQualityInfo_LinkClicked);
+            // 
+            // checkBoxFixQuality
+            // 
+            this.checkBoxFixQuality.AutoSize = true;
+            this.checkBoxFixQuality.Location = new System.Drawing.Point(9, 42);
+            this.checkBoxFixQuality.Name = "checkBoxFixQuality";
+            this.checkBoxFixQuality.Size = new System.Drawing.Size(117, 17);
+            this.checkBoxFixQuality.TabIndex = 1;
+            this.checkBoxFixQuality.Text = "Fix Desktop Quality";
+            this.checkBoxFixQuality.UseVisualStyleBackColor = true;
+            this.checkBoxFixQuality.CheckedChanged += new System.EventHandler(this.checkBoxFixQuality_CheckedChanged);
+            // 
+            // checkBoxBoot
+            // 
+            this.checkBoxBoot.AutoSize = true;
+            this.checkBoxBoot.Location = new System.Drawing.Point(9, 18);
+            this.checkBoxBoot.Name = "checkBoxBoot";
+            this.checkBoxBoot.Size = new System.Drawing.Size(87, 17);
+            this.checkBoxBoot.TabIndex = 0;
+            this.checkBoxBoot.Text = "Start on boot";
+            this.checkBoxBoot.UseVisualStyleBackColor = true;
+            this.checkBoxBoot.CheckedChanged += new System.EventHandler(this.checkBoxBoot_CheckedChanged);
+            // 
             // labelMinutes
             // 
             this.labelMinutes.AutoSize = true;
@@ -181,50 +225,6 @@
             this.checkBoxUseTimer.UseVisualStyleBackColor = true;
             this.checkBoxUseTimer.CheckedChanged += new System.EventHandler(this.checkBoxUseTimer_CheckedChanged);
             // 
-            // groupBoxDivide
-            // 
-            this.groupBoxDivide.Controls.Add(this.linkLabelQualityInfo);
-            this.groupBoxDivide.Controls.Add(this.checkBoxFixQuality);
-            this.groupBoxDivide.Controls.Add(this.checkBoxBoot);
-            this.groupBoxDivide.Location = new System.Drawing.Point(137, 0);
-            this.groupBoxDivide.Name = "groupBoxDivide";
-            this.groupBoxDivide.Size = new System.Drawing.Size(150, 75);
-            this.groupBoxDivide.TabIndex = 3;
-            this.groupBoxDivide.TabStop = false;
-            // 
-            // checkBoxBoot
-            // 
-            this.checkBoxBoot.AutoSize = true;
-            this.checkBoxBoot.Location = new System.Drawing.Point(7, 18);
-            this.checkBoxBoot.Name = "checkBoxBoot";
-            this.checkBoxBoot.Size = new System.Drawing.Size(87, 17);
-            this.checkBoxBoot.TabIndex = 0;
-            this.checkBoxBoot.Text = "Start on boot";
-            this.checkBoxBoot.UseVisualStyleBackColor = true;
-            this.checkBoxBoot.CheckedChanged += new System.EventHandler(this.checkBoxBoot_CheckedChanged);
-            // 
-            // checkBoxFixQuality
-            // 
-            this.checkBoxFixQuality.AutoSize = true;
-            this.checkBoxFixQuality.Location = new System.Drawing.Point(7, 42);
-            this.checkBoxFixQuality.Name = "checkBoxFixQuality";
-            this.checkBoxFixQuality.Size = new System.Drawing.Size(117, 17);
-            this.checkBoxFixQuality.TabIndex = 1;
-            this.checkBoxFixQuality.Text = "Fix Desktop Quality";
-            this.checkBoxFixQuality.UseVisualStyleBackColor = true;
-            this.checkBoxFixQuality.CheckedChanged += new System.EventHandler(this.checkBoxFixQuality_CheckedChanged);
-            // 
-            // linkLabelQualityInfo
-            // 
-            this.linkLabelQualityInfo.AutoSize = true;
-            this.linkLabelQualityInfo.Location = new System.Drawing.Point(117, 43);
-            this.linkLabelQualityInfo.Name = "linkLabelQualityInfo";
-            this.linkLabelQualityInfo.Size = new System.Drawing.Size(13, 13);
-            this.linkLabelQualityInfo.TabIndex = 2;
-            this.linkLabelQualityInfo.TabStop = true;
-            this.linkLabelQualityInfo.Text = "?";
-            this.linkLabelQualityInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelQualityInfo_LinkClicked);
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,9 +242,9 @@
             this.AboutBox.PerformLayout();
             this.groupBoxSettings.ResumeLayout(false);
             this.groupBoxSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).EndInit();
             this.groupBoxDivide.ResumeLayout(false);
             this.groupBoxDivide.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).EndInit();
             this.ResumeLayout(false);
 
         }
