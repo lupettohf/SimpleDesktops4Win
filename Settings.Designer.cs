@@ -164,6 +164,7 @@
             0,
             0,
             0});
+            this.numericUpDownTime.ValueChanged += new System.EventHandler(this.numericUpDownTime_ValueChanged);
             // 
             // checkBoxUseTimer
             // 
@@ -174,6 +175,7 @@
             this.checkBoxUseTimer.TabIndex = 0;
             this.checkBoxUseTimer.Text = "Change backgroud in:";
             this.checkBoxUseTimer.UseVisualStyleBackColor = true;
+            this.checkBoxUseTimer.CheckedChanged += new System.EventHandler(this.checkBoxUseTimer_CheckedChanged);
             // 
             // groupBoxDivide
             // 
@@ -195,6 +197,7 @@
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings & About";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.AboutBox.ResumeLayout(false);
             this.AboutBox.PerformLayout();
             this.groupBoxSettings.ResumeLayout(false);
@@ -216,7 +219,7 @@
         private System.Windows.Forms.GroupBox groupBoxSettings;
         private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.NumericUpDown numericUpDownTime;
-        private System.Windows.Forms.CheckBox checkBoxUseTimer;
         private System.Windows.Forms.GroupBox groupBoxDivide;
+        public System.Windows.Forms.CheckBox checkBoxUseTimer;
     }
 }

@@ -6,9 +6,10 @@ namespace SimpleDesktops4Win
     public partial class Main : Form
     {
         private int current_offset = 0;
+        private int current_wallpaper = 0;
         private int total_wallpapers;
         private RootObject parsedData;
-    
+
         public Main()
         {
             InitializeComponent();
@@ -17,6 +18,14 @@ namespace SimpleDesktops4Win
         private void Main_Load(object sender, EventArgs e)
         {
             updateWallpaperData(current_offset);
+            if (Convert.ToBoolean(Properties.Settings.Default["AutoChange"]))
+            {
+                timerChangeBackgound.Enabled = true;
+                timerChangeBackgound.Interval = (int) TimeSpan.FromMinutes(Convert.ToInt32(Properties.Settings.Default["RefreshTime"])).TotalMilliseconds;
+            } else
+            {
+                timerChangeBackgound.Enabled = false;
+            }
         }
 
         private void updateWallpaperData(int offset)
@@ -95,6 +104,20 @@ namespace SimpleDesktops4Win
         {
             Settings form = new Settings();
             form.Show();
+        }
+
+        private void timerChanegBackgound_Tick(object sender, EventArgs e)
+        {
+            if(current_wallpaper == 24 && !(current_offset == total_wallpapers / 24)) { current_offset += 24; current_wallpaper = 0; }
+            else { current_offset = 0; current_wallpaper = 0; }
+            var currentWallpaper = parsedData.objects[current_wallpaper];
+            try
+            {
+                Thread downloadAndSet = new Thread(o => { downloadSetBackground((string)o); });
+                downloadAndSet.Start(currentWallpaper.url);
+                current_wallpaper++;
+            }
+            catch (Exception ex) { }
         }
     }
 }

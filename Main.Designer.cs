@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBoxRect = new System.Windows.Forms.GroupBox();
             this.wpSelector = new System.Windows.Forms.ComboBox();
@@ -35,13 +36,14 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxCurWallpaper = new System.Windows.Forms.PictureBox();
             this.toolStripSettings = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonForward = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelCurrentpage = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButtonSetCurrent = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
+            this.timerChangeBackgound = new System.Windows.Forms.Timer(this.components);
             this.groupBoxRect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurWallpaper)).BeginInit();
             this.toolStripSettings.SuspendLayout();
@@ -114,6 +116,16 @@
             this.toolStripSettings.TabIndex = 3;
             this.toolStripSettings.Text = "toolStrip1";
             // 
+            // toolStripButtonSettings
+            // 
+            this.toolStripButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSettings.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSettings.Image")));
+            this.toolStripButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
+            this.toolStripButtonSettings.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSettings.Text = "Settings & About";
+            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -161,15 +173,10 @@
             this.toolStripButtonSetCurrent.Text = "Set current wallpaper";
             this.toolStripButtonSetCurrent.Click += new System.EventHandler(this.toolStripButtonSetCurrent_Click);
             // 
-            // toolStripButtonSettings
+            // timerChangeBackgound
             // 
-            this.toolStripButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSettings.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSettings.Image")));
-            this.toolStripButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
-            this.toolStripButtonSettings.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSettings.Text = "Settings & About";
-            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
+            this.timerChangeBackgound.Interval = 3000;
+            this.timerChangeBackgound.Tick += new System.EventHandler(this.timerChanegBackgound_Tick);
             // 
             // Main
             // 
@@ -208,6 +215,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabelCurrentpage;
         private System.Windows.Forms.ToolStripButton toolStripButtonSetCurrent;
         private System.Windows.Forms.ToolStripButton toolStripButtonSettings;
+        public System.Windows.Forms.Timer timerChangeBackgound;
     }
 }
 
