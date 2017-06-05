@@ -1,0 +1,4 @@
+language: csharp
+solution: SimpleDesktops4Win.sln
+install:
+  - nuget restore SimpleDesktops4Win.sln
