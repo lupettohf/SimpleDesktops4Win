@@ -119,5 +119,17 @@ namespace SimpleDesktops4Win
             }
             catch (Exception ex) { }
         }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            notifyIconControl.ShowBalloonTip(5000);
+            Hide();
+        }
+
+        private void notifyIconControl_Click(object sender, EventArgs e)
+        {
+            Show();
+        }
     }
 }

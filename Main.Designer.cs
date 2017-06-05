@@ -44,6 +44,7 @@
             this.toolStripLabelCurrentpage = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButtonSetCurrent = new System.Windows.Forms.ToolStripButton();
             this.timerChangeBackgound = new System.Windows.Forms.Timer(this.components);
+            this.notifyIconControl = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxRect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurWallpaper)).BeginInit();
             this.toolStripSettings.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // pictureBoxCurWallpaper
             // 
+            this.pictureBoxCurWallpaper.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCurWallpaper.BackgroundImage")));
             this.pictureBoxCurWallpaper.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCurWallpaper.ErrorImage")));
             this.pictureBoxCurWallpaper.ImageLocation = "Center";
             this.pictureBoxCurWallpaper.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCurWallpaper.InitialImage")));
@@ -175,8 +177,17 @@
             // 
             // timerChangeBackgound
             // 
-            this.timerChangeBackgound.Interval = 3000;
+            this.timerChangeBackgound.Interval = 5000;
             this.timerChangeBackgound.Tick += new System.EventHandler(this.timerChanegBackgound_Tick);
+            // 
+            // notifyIconControl
+            // 
+            this.notifyIconControl.BalloonTipText = "Click here to open the app";
+            this.notifyIconControl.BalloonTipTitle = "SimpleDesktops4Win";
+            this.notifyIconControl.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconControl.Icon")));
+            this.notifyIconControl.Text = "SimpleDesktops4Win";
+            this.notifyIconControl.Visible = true;
+            this.notifyIconControl.Click += new System.EventHandler(this.notifyIconControl_Click);
             // 
             // Main
             // 
@@ -185,11 +196,14 @@
             this.ClientSize = new System.Drawing.Size(352, 277);
             this.Controls.Add(this.toolStripSettings);
             this.Controls.Add(this.groupBoxRect);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimpleDesktops4Win";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBoxRect.ResumeLayout(false);
             this.groupBoxRect.PerformLayout();
@@ -216,6 +230,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSetCurrent;
         private System.Windows.Forms.ToolStripButton toolStripButtonSettings;
         public System.Windows.Forms.Timer timerChangeBackgound;
+        private System.Windows.Forms.NotifyIcon notifyIconControl;
     }
 }
 
