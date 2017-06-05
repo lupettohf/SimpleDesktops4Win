@@ -45,6 +45,7 @@
             this.toolStripButtonSetCurrent = new System.Windows.Forms.ToolStripButton();
             this.timerChangeBackgound = new System.Windows.Forms.Timer(this.components);
             this.notifyIconControl = new System.Windows.Forms.NotifyIcon(this.components);
+            this.toolStripButtonExit = new System.Windows.Forms.ToolStripButton();
             this.groupBoxRect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurWallpaper)).BeginInit();
             this.toolStripSettings.SuspendLayout();
@@ -110,6 +111,7 @@
             this.toolStripButtonBack,
             this.toolStripButtonForward,
             this.toolStripSeparator2,
+            this.toolStripButtonExit,
             this.toolStripLabelCurrentpage,
             this.toolStripButtonSetCurrent});
             this.toolStripSettings.Location = new System.Drawing.Point(0, 0);
@@ -189,6 +191,17 @@
             this.notifyIconControl.Visible = true;
             this.notifyIconControl.Click += new System.EventHandler(this.notifyIconControl_Click);
             // 
+            // toolStripButtonExit
+            // 
+            this.toolStripButtonExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExit.Image")));
+            this.toolStripButtonExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExit.Name = "toolStripButtonExit";
+            this.toolStripButtonExit.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonExit.Text = "Exit application";
+            this.toolStripButtonExit.Click += new System.EventHandler(this.toolStripButtonExit_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +244,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSettings;
         public System.Windows.Forms.Timer timerChangeBackgound;
         private System.Windows.Forms.NotifyIcon notifyIconControl;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExit;
     }
 }
 

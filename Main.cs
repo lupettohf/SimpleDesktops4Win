@@ -131,5 +131,10 @@ namespace SimpleDesktops4Win
         {
             Show();
         }
+
+        private void toolStripButtonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
