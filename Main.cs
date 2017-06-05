@@ -42,12 +42,12 @@ namespace SimpleDesktops4Win
                 }
                 wpSelector.SelectedIndex = 0;
                 toolStripLabelCurrentpage.Text = String.Format("Current Page: {0}/{1}", current_offset / 24, total_wallpapers / 24);
-            }catch (Exception e) { }
+            }catch (Exception) { }
         }
 
         public void downloadSetBackground(string url)
         {
-            utils.wallpaperAgent.Set(webCl.downloadImage(url));
+            try { utils.wallpaperAgent.Set(webCl.downloadImage(url)); } catch(Exception) { }
         }
 
         private void wpSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace SimpleDesktops4Win
             try {
                 Thread downloadAndSet = new Thread(o => { downloadSetBackground((string)o); });
                 downloadAndSet.Start(currentWallpaper.url);
-            } catch (Exception ex) { }
+            } catch (Exception) { }
         }
 
         private void toolStripButtonBack_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace SimpleDesktops4Win
                 downloadAndSet.Start(currentWallpaper.url);
                 current_wallpaper++;
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)

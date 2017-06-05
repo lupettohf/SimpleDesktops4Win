@@ -15,6 +15,8 @@ namespace SimpleDesktops4Win
         {
             checkBoxUseTimer.Checked = Convert.ToBoolean(Properties.Settings.Default["AutoChange"]);
             numericUpDownTime.Value = Convert.ToInt32(Properties.Settings.Default["RefreshTime"]);
+            checkBoxBoot.Checked = Convert.ToBoolean(Properties.Settings.Default["Startup"]);
+            checkBoxFixQuality.Checked = Convert.ToBoolean(Properties.Settings.Default["FixJPG"]);
         }
 
         private void linkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

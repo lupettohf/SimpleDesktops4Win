@@ -22,10 +22,10 @@ namespace SimpleDesktops4Win.utils
          * */
         public static void setQualityFix(bool enable)
         {
-            RegistryKey regKey = Registry.CurrentUser.OpenSubKey("HKEY_CURRENT_USER\\Control Panel\\Desktop", true);
-            if(enable)
+            RegistryKey regKey = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true);
+            if (enable)
             {
-                regKey.SetValue("JPEGImportQuality", 100);
+                regKey.SetValue("JPEGImportQuality", unchecked((int)0x64), RegistryValueKind.DWord);
             } else
             {
                 regKey.DeleteValue("JPEGImportQuality", false);
