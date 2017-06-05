@@ -16,6 +16,12 @@ SimpleDesktops4Win _αlpha 0.0.1_
 
 
 ----------
+## Download ##
+See [Releases](https://github.com/lupettohf/SimpleDesktops4Win/releases/) for the download. 
+
+You can get the application in setup or standalone form. 
+
+----------
 
 ## To-Do ##
 
